@@ -15,7 +15,7 @@ int main(){
     }
     else
     {
-        if(f_num == 0 || f_num == 1)
+        if(f_num == 0)
         {
             printf("factorial is equal : 1");
         }
@@ -25,7 +25,7 @@ int main(){
             {
                 factorial*=i;
             }
-            printf("factorial is equal : %lld", factorial);
+            printf("factorial of %d is equal : %lld", f_num,factorial);
         }
 
     }
@@ -78,3 +78,4 @@ while (choice!=1 && choice!=2 && choice!=3);
 return 0;
 
 }
+
