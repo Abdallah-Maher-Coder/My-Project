@@ -4,6 +4,7 @@ int main(){
     printf("=======Task 09 Factorial Calculation=======\n");
 
     int f_num, c, i;
+    long long factorial=1;
    
     printf("please enter the number to calculate its factorial:\n");
     scanf("%d", &f_num);
@@ -20,7 +21,6 @@ int main(){
         }
         else
         {
-             long long factorial=1;
             for(i=1;i<=f_num;i++)
             {
                 factorial*=i;
@@ -76,4 +76,5 @@ do
 }
 while (choice!=1 && choice!=2 && choice!=3);
 return 0;
+
 }
