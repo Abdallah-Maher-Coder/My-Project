@@ -5,8 +5,10 @@ int main(){
 
     int f_num, c, i;
     long long factorial=1;
+
     printf("please enter the number to calculate its factorial:\n");
     scanf("%d", &f_num);
+
     if(f_num<0)
     {
         printf ("please enter positive number:\n");
@@ -28,6 +30,9 @@ int main(){
         }
 
     }
+
+
+
 printf("\n=======Task 10 Power Calculation=======\n"); 
 
 //Write a program that reads two numbers x and y, then calculates:
@@ -40,22 +45,28 @@ printf("please enter the number of x :");
 scanf("%d", &x);
 printf("please enter the power of y :");
 scanf("%d", &y);
-while (ii<=y)
+while (ii<=y)//need explanation
 {
     z*=x;
-    ii++;
+    ii++; 
 }
 printf("x power y is: %d", z);
 
+
+
 //Task 12 – Menu Program
 //Write a program that displays a menu of options and allows the user to select and execute an operation.
+
 printf("\n=======Task 12 Menu Program=======\n");
+
 int choice;
+
 printf("which phone brand do you prefer?\n");
 printf("1.iphone\n");
 printf("2.samsung\n");
 printf("3.xiaomi\n");
 printf("please enter the number of phone brand you prefer:");
+
 do
 {
     scanf("%d", &choice);
@@ -74,6 +85,7 @@ do
     }
 }
 while (choice!=1 && choice!=2 && choice!=3);
+
 return 0;
 }
 
