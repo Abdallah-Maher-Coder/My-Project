@@ -62,7 +62,7 @@ void swap_func (void)
 
 
 //ch5_ex_5.2 another solution
-#include <stdio.h>
+/* #include <stdio.h>
 
 int x=7;
 int y =9;
@@ -84,4 +84,5 @@ void swap_func(void)
     x=y;
     y=z;   
 }
+    */
 
