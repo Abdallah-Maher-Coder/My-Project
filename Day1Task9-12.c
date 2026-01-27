@@ -45,7 +45,7 @@ printf("please enter the number of x :");
 scanf("%d", &x);
 printf("please enter the power of y :");
 scanf("%d", &y);
-while (ii<=y)//need explanation
+while (ii<=y)
 {
     z*=x;
     ii++; 
