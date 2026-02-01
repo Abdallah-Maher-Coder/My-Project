@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-////////////////////////////// Task 11 – Reverse Number /////////////////////////////
+/*
+////////////////////////////// Task 11 – Reverse Number ////////////////////////////
 void Reverse_Number()
 {
     int i;
@@ -139,18 +140,17 @@ void two_D_array()
 
         default:1;
             break;
+        }
+    
     }
 
-    
 }
-
-
 //Task 15 – Maximum Distance
 //Task 16 – Magic Box
 
 
 
-////////////////////////////// Task 17 - Fibonacci Series ///////////////////////
+*/ ////////////////////////////// Task 17 - Fibonacci Series ///////////////////////
 void Fibonacci_Series()
 {
     int i;
@@ -158,17 +158,17 @@ void Fibonacci_Series()
     printf("enter the terms number of Fibonacci Series : ");
     scanf("%d", &n);
     int t1, t2;
-    if(n==1)
+    if(n==0)
     {
         t1 = 0;
         printf("%d",t1);
-    } else if(n==2)
+    } else if(n==1)
     {
         t1 = 0, 
         t2 = 1;
         printf("%d %d", t1, t2);
     }
-    else if(n>2)
+    else if(n>1)
     {
         t1 = 0;
         t2 = 1;
@@ -228,11 +228,11 @@ void bubble_sort()
 int main()
 {
 
-    one_D_array();
-    two_D_array();
-    bubble_sort();
+    //one_D_array();
+    //two_D_array();
+    //bubble_sort();
     Fibonacci_Series();
-    Reverse_Number();
+    //Reverse_Number();
 
 
  return 0;
