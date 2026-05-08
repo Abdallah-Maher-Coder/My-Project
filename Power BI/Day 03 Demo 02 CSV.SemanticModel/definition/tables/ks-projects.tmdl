@@ -1,0 +1,207 @@
+table ks-projects
+	lineageTag: 8e3310ff-17eb-452b-882d-4d4b861eed41
+
+	measure #projects = count('ks-projects'[ID])
+		formatString: 0
+		lineageTag: 444002ab-fdae-46b5-b874-fff8e827ab59
+
+	measure #backers = sum('ks-projects'[backers])
+		formatString: 0
+		lineageTag: 45eca521-232d-492b-80cc-82cae825c433
+
+	measure 'Total bledged' = sum('ks-projects'[usd pledged])
+		lineageTag: cbf87389-caaa-4d04-b50f-3617f73c9017
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total goal' = sum('ks-projects'[usd_goal_real])
+		lineageTag: a19ba273-e60e-46c4-bf65-35c218e1edbc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3be1d61d-ff04-4c40-9bf4-fe2023291b88
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column project
+		dataType: string
+		lineageTag: 10a7713b-cb40-4448-b6c9-1f9e7fd497f8
+		summarizeBy: none
+		sourceColumn: project
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: e248850c-e8bd-4320-8743-41dd43d15581
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column main_category
+		dataType: string
+		lineageTag: 63a193da-70fd-4d7b-835f-9017d3697fbd
+		summarizeBy: none
+		sourceColumn: main_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 2d94dc81-012e-49dd-9d86-2ca41b46b080
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column deadline
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7b227ca9-890a-49eb-9d80-80c9fa74723a
+		summarizeBy: none
+		sourceColumn: deadline
+
+		variation Variation
+			isDefault
+			relationship: 5e148b76-2e08-4675-98a3-8fbf5da91af1
+			defaultHierarchy: LocalDateTable_5c6318d1-2519-4cf0-b8b3-6028386fd1c8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column goal
+		dataType: int64
+		formatString: 0
+		lineageTag: b23d508f-b41b-4807-9a9c-fd8c8e04c705
+		summarizeBy: sum
+		sourceColumn: goal
+
+		annotation SummarizationSetBy = Automatic
+
+	column launched
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c965c2e9-04e6-4348-a84d-a704cf7f1601
+		summarizeBy: none
+		sourceColumn: launched
+
+		variation Variation
+			isDefault
+			relationship: 5b4ae445-441e-4cad-a29f-00abd3747a17
+			defaultHierarchy: LocalDateTable_af6ed47a-8f83-4f18-9a6f-19f60b02a2b9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column pledged
+		dataType: double
+		lineageTag: 47e1361e-d617-4870-abaf-23a690989880
+		summarizeBy: sum
+		sourceColumn: pledged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column state
+		dataType: string
+		lineageTag: 2af674d4-804a-4950-88ce-05ccd00cca59
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column backers
+		dataType: int64
+		formatString: 0
+		lineageTag: b8969fb9-2260-423c-baf0-1e3ed5550127
+		summarizeBy: sum
+		sourceColumn: backers
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 6d672b0f-b15a-4072-8239-5715410e933d
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'usd pledged'
+		dataType: double
+		lineageTag: c37674c1-0c1f-43a9-9f6c-7cffe55b3ad9
+		summarizeBy: sum
+		sourceColumn: usd pledged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column usd_pledged_real
+		dataType: double
+		lineageTag: 3a563a6a-6fc0-405e-8fba-27cb22c3bcb9
+		summarizeBy: sum
+		sourceColumn: usd_pledged_real
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column usd_goal_real
+		dataType: double
+		lineageTag: e140e5bf-15b2-49f2-bdec-d0132e25bb56
+		summarizeBy: sum
+		sourceColumn: usd_goal_real
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'File Name'
+		dataType: string
+		lineageTag: 59c2a799-9ece-4f63-871f-a16ba6e0a181
+		summarizeBy: none
+		sourceColumn: File Name
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'main_category Hierarchy'
+		lineageTag: 59e063d2-9fa6-4f65-9bb6-0f43de9fabae
+
+		level main_category
+			lineageTag: 8316d81b-0c4e-4002-9cc2-8988df9fec9f
+			column: main_category
+
+		level category
+			lineageTag: 949fd975-6238-44e3-b84b-cbe50d7d2d46
+			column: category
+
+		level project
+			lineageTag: c88ab756-8caa-4cd2-965b-cf4c6a8de6c9
+			column: project
+
+	partition ks-projects = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\FW01\Downloads\ks-projects-201801.csv\ks-projects-201801.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Trimmed Text" = Table.TransformColumns(Source,{{"Column1", Text.Trim, type text}, {"Column2", Text.Trim, type text}, {"Column3", Text.Trim, type text}, {"Column4", Text.Trim, type text}, {"Column5", Text.Trim, type text}, {"Column6", Text.Trim, type text}, {"Column7", Text.Trim, type text}, {"Column8", Text.Trim, type text}, {"Column9", Text.Trim, type text}, {"Column10", Text.Trim, type text}, {"Column11", Text.Trim, type text}, {"Column12", Text.Trim, type text}, {"Column13", Text.Trim, type text}, {"Column14", Text.Trim, type text}, {"Column15", Text.Trim, type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Trimmed Text", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ID", Int64.Type}, {"name", type text}, {"category", type text}, {"main_category", type text}, {"currency", type text}, {"deadline", type date}, {"goal", Int64.Type}, {"launched", type datetime}, {"pledged", type number}, {"state", type text}, {"backers", Int64.Type}, {"country", type text}, {"usd pledged", type number}, {"usd_pledged_real", type number}, {"usd_goal_real", type number}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "File Name", each 2018),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"name", "project"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"backers", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "af0303aca0562be87b7f",
+  "position": {
+    "x": 671.01425484513982,
+    "y": 201.7159416405635,
+    "z": 5000,
+    "height": 264.8379369838691,
+    "width": 557.12021976917538,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ks-projects"
+                        }
+                      },
+                      "Hierarchy": "main_category Hierarchy"
+                    }
+                  },
+                  "Level": "main_category"
+                }
+              },
+              "queryRef": "ks-projects.main_category Hierarchy.main_category",
+              "nativeQueryRef": "main_category Hierarchy main_category",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ks-projects"
+                        }
+                      },
+                      "Hierarchy": "main_category Hierarchy"
+                    }
+                  },
+                  "Level": "category"
+                }
+              },
+              "queryRef": "ks-projects.main_category Hierarchy.category",
+              "nativeQueryRef": "main_category Hierarchy category",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ks-projects"
+                    }
+                  },
+                  "Property": "#projects"
+                }
+              },
+              "queryRef": "ks-projects.#projects",
+              "nativeQueryRef": "#projects"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

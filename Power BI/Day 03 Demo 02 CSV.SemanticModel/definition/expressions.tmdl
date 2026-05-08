@@ -1,0 +1,31 @@
+expression ks-projects-201612 =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\FW01\Downloads\ks-projects-201612.csv\ks-projects-201612.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Trimmed Text" = Table.TransformColumns(Source,{{"Column1", Text.Trim, type text}, {"Column2", Text.Trim, type text}, {"Column3", Text.Trim, type text}, {"Column4", Text.Trim, type text}, {"Column5", Text.Trim, type text}, {"Column6", Text.Trim, type text}, {"Column7", Text.Trim, type text}, {"Column8", Text.Trim, type text}, {"Column9", Text.Trim, type text}, {"Column10", Text.Trim, type text}, {"Column11", Text.Trim, type text}, {"Column12", Text.Trim, type text}, {"Column13", Text.Trim, type text}, {"Column14", Text.Trim, type text}, {"Column15", Text.Trim, type text}, {"Column16", Text.Trim, type text}, {"Column17", Text.Trim, type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Trimmed Text", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ID", Int64.Type}, {"name", type text}, {"category", type text}, {"main_category", type text}, {"currency", type text}, {"deadline", type datetime}, {"goal", Int64.Type}, {"launched", type datetime}, {"pledged", type number}, {"state", type text}, {"backers", Int64.Type}, {"country", type text}, {"usd pledged", type number}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}}),
+		    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"deadline"}),
+		    #"Added Custom" = Table.AddColumn(#"Removed Errors", "File Name", each 2016)
+		in
+		    #"Added Custom"
+	lineageTag: f27f1028-7cb4-4b0f-a466-86abc280a5dc
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression ks-projects-201801 =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\FW01\Downloads\ks-projects-201801.csv\ks-projects-201801.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Trimmed Text" = Table.TransformColumns(Source,{{"Column1", Text.Trim, type text}, {"Column2", Text.Trim, type text}, {"Column3", Text.Trim, type text}, {"Column4", Text.Trim, type text}, {"Column5", Text.Trim, type text}, {"Column6", Text.Trim, type text}, {"Column7", Text.Trim, type text}, {"Column8", Text.Trim, type text}, {"Column9", Text.Trim, type text}, {"Column10", Text.Trim, type text}, {"Column11", Text.Trim, type text}, {"Column12", Text.Trim, type text}, {"Column13", Text.Trim, type text}, {"Column14", Text.Trim, type text}, {"Column15", Text.Trim, type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Trimmed Text", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ID", Int64.Type}, {"name", type text}, {"category", type text}, {"main_category", type text}, {"currency", type text}, {"deadline", type date}, {"goal", Int64.Type}, {"launched", type datetime}, {"pledged", type number}, {"state", type text}, {"backers", Int64.Type}, {"country", type text}, {"usd pledged", type number}, {"usd_pledged_real", type number}, {"usd_goal_real", type number}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type", "File Name", each 2018)
+		in
+		    #"Added Custom"
+	lineageTag: 360f65e0-1095-4e01-96c4-f75c2c071831
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

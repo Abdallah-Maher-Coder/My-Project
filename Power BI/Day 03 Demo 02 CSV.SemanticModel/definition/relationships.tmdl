@@ -1,0 +1,10 @@
+relationship 5e148b76-2e08-4675-98a3-8fbf5da91af1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ks-projects.deadline
+	toColumn: LocalDateTable_5c6318d1-2519-4cf0-b8b3-6028386fd1c8.Date
+
+relationship 5b4ae445-441e-4cad-a29f-00abd3747a17
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ks-projects.launched
+	toColumn: LocalDateTable_af6ed47a-8f83-4f18-9a6f-19f60b02a2b9.Date
+

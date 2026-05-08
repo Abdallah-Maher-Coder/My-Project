@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["ks-projects-201612","ks-projects-201801","ks-projects"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table ks-projects
+ref table DateTableTemplate_a8560f18-6af0-4fbb-8c9d-b44d960ce907
+ref table LocalDateTable_5c6318d1-2519-4cf0-b8b3-6028386fd1c8
+ref table LocalDateTable_af6ed47a-8f83-4f18-9a6f-19f60b02a2b9
+
+ref cultureInfo en-US
+
